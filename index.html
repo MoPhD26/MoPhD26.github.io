@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mogahid Hussein, Ph.D., GISP | Geospatial Data Scientist</title>
+<meta name="description" content="Geospatial data scientist and former Esri Senior Instructor. Spatial statistics, Python and ArcGIS automation, social vulnerability and hazard research.">
+<meta property="og:title" content="Mogahid Hussein, Ph.D., GISP">
+<meta property="og:description" content="Geospatial data scientist who can teach it. Spatial statistics, Python, ArcGIS, and hazard research.">
+<meta property="og:image" content="https://mophd26.github.io/assets/img/fig8_colocation.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="mark" href="#top">MH</a>
+  <nav>
+    <a href="#work">Work</a>
+    <a href="#research">Research</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact" class="nav-cta">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="contours" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <p class="coords">29.42° N, 98.49° W &nbsp;/&nbsp; San Antonio, Texas &nbsp;/&nbsp; Open to remote and relocation</p>
+    <h1>Mogahid Hussein<span class="creds"><span class="comma">,</span> Ph.D., GISP</span></h1>
+    <p class="tagline">Geospatial data scientist who can teach it.</p>
+    <p class="lede">I turn messy public data into spatial evidence people can act on, and I explain it so they trust it. My doctoral research tracked 15 years of social vulnerability across 807 Texas census tracts and showed where FEMA's loss model misses vulnerable communities. Before that, I spent nearly four years at Esri teaching more than 1,000 professionals to build with ArcGIS, Python, and Arcade.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#work">See the work</a>
+      <a class="btn" href="mailto:Husseinmogahid@gmail.com">Get in touch</a>
+      <a class="btn ghost" href="https://github.com/MoPhD26" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="metrics wrap" aria-label="Highlights">
+  <div class="metric">
+    <span class="num">1,000+</span>
+    <span class="label">GIS professionals trained at Esri, from county governments to federal agencies</span>
+  </div>
+  <div class="metric">
+    <span class="num">4.8<small>/5</small></span>
+    <span class="label">Average instructor rating across Esri courses</span>
+  </div>
+  <div class="metric">
+    <span class="num">2 <small>of</small> 188</span>
+    <span class="label">Vulnerability hot spots that FEMA's loss model also flags, against about 23 expected by chance</span>
+  </div>
+  <div class="metric">
+    <span class="num">100+</span>
+    <span class="label">Automated tests running in CI across four public repositories</span>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" class="section wrap">
+  <div class="section-head">
+    <p class="kicker">01 / Selected work</p>
+    <h2>Projects built like production code</h2>
+    <p class="section-sub">Each one is public, tested on every push, and written up so you can see the decisions, not just the output.</p>
+  </div>
+
+  <div class="filters" role="tablist" aria-label="Filter projects">
+    <button class="filter active" data-filter="all" role="tab" aria-selected="true">All</button>
+    <button class="filter" data-filter="research" role="tab" aria-selected="false">Research</button>
+    <button class="filter" data-filter="python" role="tab" aria-selected="false">Python</button>
+    <button class="filter" data-filter="r" role="tab" aria-selected="false">R</button>
+    <button class="filter" data-filter="arcade" role="tab" aria-selected="false">Arcade</button>
+  </div>
+
+  <div class="cards">
+
+    <article class="card featured" data-tags="research python">
+      <img src="assets/img/fig8_colocation.webp" alt="Map of the Austin and San Antonio corridor showing where social vulnerability hot spots and FEMA expected loss hot spots fall" loading="lazy">
+      <div class="card-body">
+        <p class="tags"><span>Python</span><span>Spatial statistics</span><span>Census API</span><span>ArcGIS Pro</span></p>
+        <h3>Texas SVI Pipeline</h3>
+        <p class="summary">A 15-year social vulnerability index for 13 Texas counties, and a test of whether FEMA's loss model sees the same places.</p>
+        <details>
+          <summary>Read the case study</summary>
+          <div class="cs">
+            <h4>Problem</h4>
+            <p>Most vulnerability studies capture one moment, so they can't tell lasting disadvantage from a bad year. Planners also lean on FEMA's National Risk Index to target resources, but nobody had checked whether its loss hot spots line up with the communities least able to recover.</p>
+            <h4>Approach</h4>
+            <p>Pulled four ACS 5-year periods through the Census API, cleaned sentinel codes, adjusted income to 2019 dollars, and moved three generations of tract boundaries onto 2010 geography with margins of error carried through. Built a pooled z-score index, ran LISA clusters for each period, and grouped every tract into one of 10 trajectory classes. Then compared Getis-Ord Gi* hot spots of vulnerability and FEMA expected annual loss, with FDR correction.</p>
+            <h4>Outcome</h4>
+            <p>Only 2 of 188 vulnerability hot spots were also loss hot spots, and none of the 98 persistently vulnerable tracts were. The loss model follows property value, so it points away from the places with the fewest resources. 61 tests guard the pipeline, and CI blocks any commit that looks like an API key.</p>
+          </div>
+        </details>
+        <a class="repo-link" href="https://github.com/MoPhD26/texas-svi-pipeline" target="_blank" rel="noopener">View repository</a>
+      </div>
+    </article>
+
+    <article class="card featured" data-tags="research r">
+      <img src="assets/img/thesis_additive_vs_pareto.webp" alt="Two maps of Travis County comparing an additive vulnerability index with Pareto ranking. Pareto ranking flags much more of the western county" loading="lazy">
+      <div class="card-body">
+        <p class="tags"><span>R</span><span>Multi-objective optimization</span><span>testthat</span><span>City of Austin</span></p>
+        <h3>Pareto Vulnerability Ranking</h3>
+        <p class="summary">My master's thesis: what happens to a vulnerability map when you stop averaging the indicators.</p>
+        <details>
+          <summary>Read the case study</summary>
+          <div class="cs">
+            <h4>Problem</h4>
+            <p>Most vulnerability indices average their indicators, so a neighborhood that is extreme on one thing, like older adults or households with no car, disappears into the middle of the map.</p>
+            <h4>Approach</h4>
+            <p>Worked with the City of Austin Office of Sustainability to pick 8 indicators for 579 Travis County block groups, then ranked them with Pareto ranking, the non-dominated sort at the heart of the NSGA-II genetic algorithm. No weights, no averaging. Compared the result with an equal weight index using Spearman's rank correlation.</p>
+            <h4>Outcome</h4>
+            <p>The two methods agreed only moderately (rho = 0.659), and Pareto ranking flagged large parts of western Travis County that the average missed. I later rebuilt the 2017 script as dependency-free R with tests, fixing a row-order issue that kept results from joining back to the map.</p>
+          </div>
+        </details>
+        <a class="repo-link" href="https://github.com/MoPhD26/pareto-vulnerability-ranking" target="_blank" rel="noopener">View repository</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="python">
+      <div class="card-visual code-visual" aria-hidden="true"><pre><span class="c"># reject swapped coordinates</span>
+<span class="k">if</span> _looks_swapped(lat, lon):
+    <span class="k">return</span> Reject(<span class="s">"lat/lon swapped"</span>)
+hull = pts.convexHull()
+zone = hull.buffer(dist)</pre></div>
+      <div class="card-body">
+        <p class="tags"><span>ArcPy</span><span>Python toolbox</span><span>pytest</span></p>
+        <h3>ArcPy Incident Response Toolkit</h3>
+        <p class="summary">Automation for the first hours of an emergency: validate field reports, map the impact area, and build the notification list.</p>
+        <details>
+          <summary>Read the case study</summary>
+          <div class="cs">
+            <h4>Problem</h4>
+            <p>In emergency GIS, the costly mistakes happen at intake. Someone swaps latitude and longitude, a partner sends data in the wrong coordinate system, or a shelter is marked full when it's half empty.</p>
+            <h4>Approach</h4>
+            <p>Separated pure validation logic from ArcPy so it runs and gets tested anywhere, then wrapped it in an ArcGIS Pro Python toolbox with cursors, geometry objects, and versioned editing. A stubbed arcpy lets CI test the toolbox on every push.</p>
+            <h4>Outcome</h4>
+            <p>Every rejected row comes back with a reason, the impact area and address list are built in one run, and partner data is checked against a written standard before anyone relies on it.</p>
+          </div>
+        </details>
+        <a class="repo-link" href="https://github.com/MoPhD26/arcpy-incident-response-toolkit" target="_blank" rel="noopener">View repository</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="arcade">
+      <div class="card-visual code-visual" aria-hidden="true"><pre><span class="k">var</span> open = $feature.capacity
+         - $feature.occupied;
+<span class="k">if</span> (IsEmpty(open)) <span class="k">return</span> <span class="s">"Check data"</span>;
+<span class="k">return</span> IIf(open &lt;= 0,
+  <span class="s">"At capacity"</span>, <span class="s">"Available"</span>);</pre></div>
+      <div class="card-body">
+        <p class="tags"><span>Arcade</span><span>Field Maps</span><span>Dashboards</span><span>Node tests</span></p>
+        <h3>Arcade Shelter Operations</h3>
+        <p class="summary">15 Arcade expressions that run a shelter network across maps, popups, forms, the geodatabase, and a live dashboard.</p>
+        <details>
+          <summary>Read the case study</summary>
+          <div class="cs">
+            <h4>Problem</h4>
+            <p>Most Arcade lives inside web maps where nobody reviews or tests it. During a flood, one bad expression can tell an operations center a shelter has beds when it doesn't.</p>
+            <h4>Approach</h4>
+            <p>Treated Arcade as code. Each expression runs through Esri's own Arcade engine in Node, against the same profile it uses in ArcGIS, with fixtures that mimic real shelter records, including broken ones.</p>
+            <h4>Outcome</h4>
+            <p>52 tests run on every push. The same shelter standard holds in the field form, the database, and the dashboard, and it matches the batch checks in the ArcPy toolkit.</p>
+          </div>
+        </details>
+        <a class="repo-link" href="https://github.com/MoPhD26/arcade-shelter-operations" target="_blank" rel="noopener">View repository</a>
+      </div>
+    </article>
+
+  </div>
+
+  <aside class="building">
+    <p class="kicker">Now building</p>
+    <p>Three data science projects, shipping over the coming weeks: bike-share demand analysis in BigQuery SQL, a spatially cross-validated model that predicts which tracts become most vulnerable, and a difference-in-differences study of new station impacts.</p>
+  </aside>
+</section>
+
+<!-- RESEARCH -->
+<section id="research" class="section research">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">02 / Research</p>
+      <h2>Persistence, change, and hazard congruence</h2>
+      <p class="section-sub">Doctoral dissertation, Texas State University. Austin and San Antonio metro corridor, 2009 to 2024. 807 census tracts, more than 5.2 million residents.</p>
+    </div>
+
+    <div class="rq-grid">
+      <div class="rq">
+        <p class="rq-num">RQ1</p>
+        <h3>How did vulnerability shift?</h3>
+        <p>The two metros split apart. Of tracts in the most vulnerable fifth in 2009, 69 percent in San Antonio were still there in 2024, compared with 26 percent in Austin, where outer counties like Bastrop rose as the core fell.</p>
+      </div>
+      <div class="rq">
+        <p class="rq-num">RQ2</p>
+        <h3>Where does it persist?</h3>
+        <p>98 tracts stayed in high-vulnerability clusters at all four time points, and 90 of them are in San Antonio. 92 tracts stayed in low clusters, 78 of them in Austin.</p>
+      </div>
+      <div class="rq">
+        <p class="rq-num">RQ3</p>
+        <h3>Does FEMA's loss model see it?</h3>
+        <p>Largely no. Only 2 of 188 vulnerability hot spots were also loss hot spots. Building losses make up about 55 percent of expected loss, so the model tracks property value, not capacity to recover.</p>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <figure><button class="zoom" data-src="assets/img/fig2_svi_by_period.webp"><img src="assets/img/fig2_svi_by_period.webp" alt="Social vulnerability by census tract for four ACS periods" loading="lazy"></button><figcaption>Vulnerability by period</figcaption></figure>
+      <figure><button class="zoom" data-src="assets/img/fig4_lisa_clusters.webp"><img src="assets/img/fig4_lisa_clusters.webp" alt="LISA cluster maps for each period" loading="lazy"></button><figcaption>LISA clusters</figcaption></figure>
+      <figure><button class="zoom" data-src="assets/img/fig5_trajectory_typology.webp"><img src="assets/img/fig5_trajectory_typology.webp" alt="Ten class trajectory typology map" loading="lazy"></button><figcaption>10-class trajectory typology</figcaption></figure>
+      <figure><button class="zoom" data-src="assets/img/fig6_svi_hotspots.webp"><img src="assets/img/fig6_svi_hotspots.webp" alt="Getis-Ord hot spots of mean social vulnerability" loading="lazy"></button><figcaption>Vulnerability hot spots</figcaption></figure>
+      <figure><button class="zoom" data-src="assets/img/fig7_eal_hotspots.webp"><img src="assets/img/fig7_eal_hotspots.webp" alt="Getis-Ord hot spots of FEMA expected annual loss" loading="lazy"></button><figcaption>Expected loss hot spots</figcaption></figure>
+      <figure><button class="zoom" data-src="assets/img/fig3_quintile_change.webp"><img src="assets/img/fig3_quintile_change.webp" alt="Net quintile change from 2009 to 2024" loading="lazy"></button><figcaption>Quintile change, 2009 to 2024</figcaption></figure>
+    </div>
+    <p class="research-foot">Methods: ACS 5-year estimates, areal crosswalk with margins of error, pooled z-scores, Local Moran's I, Getis-Ord Gi* with FDR correction, Kruskal-Wallis and Dunn's tests. Earlier work: a <a href="https://github.com/MoPhD26/pareto-vulnerability-ranking" target="_blank" rel="noopener">master's thesis</a> with the City of Austin Office of Sustainability comparing averaged and Pareto ranked vulnerability for 579 Travis County block groups.</p>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section wrap">
+  <div class="section-head">
+    <p class="kicker">03 / Experience</p>
+    <h2>Teaching, building, and research</h2>
+  </div>
+
+  <ol class="timeline">
+    <li>
+      <p class="when">Apr 2026 - Present</p>
+      <div>
+        <h3>Independent GIS Consultant</h3>
+        <p class="org">Freelance, remote. Clients kept confidential.</p>
+        <p>Configure and train teams on ArcGIS Online and Portal hosted services, Dashboards, StoryMaps, and Experience Builder.</p>
+      </div>
+    </li>
+    <li>
+      <p class="when">Aug 2022 - Apr 2026</p>
+      <div>
+        <h3>Senior Instructor</h3>
+        <p class="org">Esri</p>
+        <p>Trained more than 1,000 professionals from county governments, federal agencies including USGS and USDA, utilities, and private companies, with a 4.8 out of 5 rating. Authored the Working with Lidar Data in ArcGIS course, served as Course Advocate for ArcGIS Arcade, co-taught ArcPy, and hosted sessions for Esri's Spatial Data Science MOOC. Presented at the Esri User Conference.</p>
+      </div>
+    </li>
+    <li>
+      <p class="when">Jun 2022 - Jul 2022</p>
+      <div>
+        <h3>GIS Technician (Contract)</h3>
+        <p class="org">Apple Maps</p>
+        <p>Digitized and quality-checked road network features against production accuracy standards.</p>
+      </div>
+    </li>
+    <li>
+      <p class="when">Aug 2016 - May 2022</p>
+      <div>
+        <h3>Graduate Instructor and Research Assistant</h3>
+        <p class="org">Texas State University</p>
+        <p>Taught GIS and remote sensing labs to more than 100 students a semester. Designed PostgreSQL and PostGIS enterprise geodatabases for faculty research.</p>
+      </div>
+    </li>
+    <li>
+      <p class="when">May 2019 - Oct 2019</p>
+      <div>
+        <h3>Spatial Data Analyst Intern</h3>
+        <p class="org">Texas ECOLAB</p>
+        <p>Planned and flew UAS missions as an FAA Part 107 pilot and processed imagery into orthomosaics and elevation surfaces.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section skills">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">04 / Toolkit</p>
+      <h2>What I work with</h2>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-group">
+        <h3>Spatial analysis</h3>
+        <ul><li>Hot spot and cluster analysis</li><li>Local Moran's I, Getis-Ord Gi*</li><li>Social vulnerability indices</li><li>FEMA National Risk Index</li><li>Hazard and exposure analysis</li></ul>
+      </div>
+      <div class="skill-group">
+        <h3>Code and data</h3>
+        <ul><li>Python, R, pandas, GeoPandas</li><li>PySAL, SciPy, statsmodels</li><li>SQL, PostgreSQL, PostGIS</li><li>Census API and ETL pipelines</li><li>Git, GitHub Actions, pytest</li></ul>
+      </div>
+      <div class="skill-group">
+        <h3>Esri platform</h3>
+        <ul><li>ArcGIS Pro, ArcPy</li><li>ArcGIS Online and Enterprise</li><li>Arcade</li><li>Dashboards, Experience Builder</li><li>Field Maps, Survey123, StoryMaps</li></ul>
+      </div>
+      <div class="skill-group">
+        <h3>Remote sensing</h3>
+        <ul><li>Lidar and point clouds</li><li>UAS imagery and photogrammetry</li><li>Satellite and aerial imagery</li><li>Elevation surfaces</li><li>ERDAS Imagine, QGIS</li></ul>
+      </div>
+    </div>
+
+    <div class="creds-row">
+      <div>
+        <h3>Education</h3>
+        <p>Ph.D., Geography (Geographic Information Science), Texas State University, 2026</p>
+        <p>M.S., Geography, Texas State University, 2018</p>
+        <p>B.S., Petroleum Engineering, Sudan University of Science and Technology, 2010</p>
+      </div>
+      <div>
+        <h3>Certifications</h3>
+        <p>GISP, GIS Certification Institute</p>
+        <p>Esri ArcGIS Pro Professional</p>
+        <p>CompTIA Certified Technical Trainer (CTT+)</p>
+        <p>FAA Part 107 Remote Pilot</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section contact wrap">
+  <p class="kicker">05 / Contact</p>
+  <h2>Let's talk about your data.</h2>
+  <p class="section-sub">I'm open to geospatial analyst, GIS developer, solutions engineering, and data science roles, plus freelance ArcGIS work.</p>
+  <div class="cta-row">
+    <a class="btn primary" href="mailto:Husseinmogahid@gmail.com">Husseinmogahid@gmail.com</a>
+    <a class="btn" href="https://github.com/MoPhD26" target="_blank" rel="noopener">github.com/MoPhD26</a>
+    <!-- Add your LinkedIn URL below, then remove the comment markers
+    <a class="btn" href="https://www.linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener">LinkedIn</a>
+    -->
+  </div>
+</section>
+
+</main>
+
+<footer class="footer wrap">
+  <p>Mogahid Hussein, Ph.D., GISP. Hosted on GitHub Pages.</p>
+</footer>
+
+<dialog id="lightbox" aria-label="Enlarged figure">
+  <button class="close" aria-label="Close">Close</button>
+  <img src="" alt="">
+</dialog>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
