@@ -60,7 +60,7 @@
   </div>
   <div class="metric">
     <span class="num">100+</span>
-    <span class="label">Automated tests running in CI across four public repositories</span>
+    <span class="label">Automated tests running in CI across five public repositories</span>
   </div>
 </section>
 
@@ -78,6 +78,7 @@
     <button class="filter" data-filter="python" role="tab" aria-selected="false">Python</button>
     <button class="filter" data-filter="r" role="tab" aria-selected="false">R</button>
     <button class="filter" data-filter="arcade" role="tab" aria-selected="false">Arcade</button>
+    <button class="filter" data-filter="remote-sensing" role="tab" aria-selected="false">Remote sensing</button>
   </div>
 
   <div class="cards">
@@ -121,6 +122,27 @@
           </div>
         </details>
         <a class="repo-link" href="https://github.com/MoPhD26/pareto-vulnerability-ranking" target="_blank" rel="noopener">View repository</a>
+      </div>
+    </article>
+
+    <article class="card featured" data-tags="research python remote-sensing">
+      <img src="assets/img/greenness_clear_counts_2012.webp" alt="Map of clear Landsat observations across Bailey's Prairie Parkland in 2012, with a zoomed panel showing the Landsat 7 scan-line gaps" loading="lazy">
+      <div class="card-body">
+        <p class="tags"><span>Google Earth Engine</span><span>Landsat</span><span>Python</span><span>Time series</span><span>In progress</span></p>
+        <h3>Texas Greenness Trends</h3>
+        <p class="summary">27 years of Landsat greenness across 246,000 square kilometers of Texas and Oklahoma prairie parkland, and how much of the change drought explains.</p>
+        <details>
+          <summary>Read the case study</summary>
+          <div class="cs">
+            <h4>Problem</h4>
+            <p>Mapping vegetation change at 30 m from 2000 to 2026 means combining four Landsat sensors that don't measure reflectance the same way. Left uncorrected, the switch to Landsat 8 in 2013 alone can create trends that aren't real.</p>
+            <h4>Approach</h4>
+            <p>Fitted my own cross-sensor harmonization on Landsat Collection 2 from a clustered sample of about 10,000 stable pixels, with reduced major axis fits by land cover group and 5-fold cross-validation. Annual March to October composites for about 274 million pixels are built in Google Earth Engine. Trends use Theil-Sen slopes, Mann-Kendall tests corrected for autocorrelation, false discovery rate control, and a minimum detectable trend, so "no significant trend" is never reported as "no change." Every export was costed and tested before it ran.</p>
+            <h4>Outcome so far</h4>
+            <p>Published coefficients from the literature left 0.025 of a 0.033 EVI2 offset in Collection 2 data. My group fits keep every land cover class below its detectable trend, with the largest leftover at 0.79 out of sample. The compute cost model for the main composites landed within 3 percent of measured use. Trend maps and drought results come next.</p>
+          </div>
+        </details>
+        <a class="repo-link" href="https://github.com/MoPhD26/texas-greenness-trends" target="_blank" rel="noopener">View repository</a>
       </div>
     </article>
 
@@ -294,7 +316,7 @@ zone = hull.buffer(dist)</pre></div>
       </div>
       <div class="skill-group">
         <h3>Remote sensing</h3>
-        <ul><li>Lidar and point clouds</li><li>UAS imagery and photogrammetry</li><li>Satellite and aerial imagery</li><li>Elevation surfaces</li><li>ERDAS Imagine, QGIS</li></ul>
+        <ul><li>Landsat time series, Google Earth Engine</li><li>Lidar and point clouds</li><li>UAS imagery and photogrammetry</li><li>Satellite and aerial imagery</li><li>Elevation surfaces</li><li>ERDAS Imagine, QGIS</li></ul>
       </div>
     </div>
 
@@ -303,7 +325,7 @@ zone = hull.buffer(dist)</pre></div>
         <h3>Education</h3>
         <p>Ph.D., Geography (Geographic Information Science), Texas State University, 2026</p>
         <p>M.S., Geography, Texas State University, 2018</p>
-        <p>B.S., Petroleum Engineering, Sudan University of Science and Technology, 2010</p>
+        <p>B.S., Petroleum Engineering, Sudan University of Science and Technology</p>
       </div>
       <div>
         <h3>Certifications</h3>
